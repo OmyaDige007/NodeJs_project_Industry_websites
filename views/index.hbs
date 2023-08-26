@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Dynamic website</title>
+  </head>
+  <body>
+    
+    {{>navbar data=details}}
+
+
+    {{> slider slides=slides}}
+
+
+    {{!-- banner1 section --}}
+
+    <section class="banner1_section background1 py-5">
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Start learning new technology here !!</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore harum deserunt quod cupiditate, quas architecto! Veniam nisi molestias expedita aperiam minus quia deserunt, quas, tempora facilis, inventore recusandae sint officiis?
+            </p>
+            <button class="btn btn-outline-primary">Start Learning</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    {{!-- services section --}}
+
+    <section id="services_section" class="py-4 ">
+
+      <div class="container ">
+
+        <h1 class="text-center text-secondary">Services that we provide</h1>
+
+      <div class="row mt-5">
+
+        {{!-- first service col --}}
+        {{#each services}}
+        <div class="col-md-4">
+
+          <div class="card">
+            <div class="container text-center py-3 ">
+            <i class="{{this.icon}} service_icon text-secondary "></i>
+            </div>
+            <h5 class="card-title">{{this.title}}</h5>
+            <p>{{this.description}}</p>
+            <div id="om">
+            <a href="{{this.linkText}}" >{{this.link}}</a>
+            <a href="#" class="ml-3" >Support</a>
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+      </div>
+
+      </div>
+
+    </section>
+
+
+
+  {{!-- banner2 section --}}
+
+    <section class="banner2_section py-5" id="banner_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center py-3">
+              {{!-- left side --}}
+              <h3>
+                We work for people , not for money
+              </h3>
+              <p>
+                Best software training institute | Extra Addon- Aptitude, softskills, and mock interviews. Learn Software Testing, Full stack/ Back end developer, python development and more. Courses: Complete Software Testing, Automation, Manual, & API, Testing/Postman & Agile. Best software training institute | Extra Addon- Aptitude, softskills, and mock interviews. Learn Software Testing, Full st
+              </p>
+              <button class="btn btn-primary">Click Here</button>
+              <br><a href="/">Back to top</a>
+          </div>
+          <div class="col-md-6 text-center py-3">
+              {{!-- right side --}}
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1p0Y5EH1iPGQMRkAVePd9mDv2cO9OqN0t_RpcysgTiiJSwwFL5YcVI-LWg_IfrZmnGjk&usqp=CAU" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      {{!-- banner3 section --}}
+
+        <section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 text-center py-3">
+              {{!-- left side --}}
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSluIIr1yDEM6v8m0TjlirqR1X_vg0HJ3lQR4h6R5b-5aHesHCo_PgPyWKPHL4xhOgdJUo&usqp=CAU" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-6 text-center py-3">
+              {{!-- right side --}}
+              <h3>
+                We work for people , not for money
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laboriosam odio deleniti omnis asperiores cumque optio! Necessitatibus ullam et laudantium omnis ipsam dignissimos ab ratione tempore, mollitia nemo iste ducimus.
+              </p>
+              <button class="btn btn-primary">Click Here</button>
+              <br><a href="/">Back to top</a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- contact us section --}}
+
+    <section id="contact_us_section" class="py-5 background1">
+      <div class="container">
+        <h1 class="text-center text-secondary">Contact Us</h1>
+        <div class="row">
+          <div class="col-md-12">
+
+
+            <form action="/process-contact-form" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Your email address</label>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+
+                <div class="mb-3">
+                  <label for="contactNumberField" class="form-label">Your contact number</label>
+                  <input name="phone" type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+
+
+                <div class="form-floating my-2">
+                <textarea name="query" style="height: 100px;" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+                <label for="queryField">Your query</label>
+              </div>
+
+
+              <div class="container text-center">
+                <button type="submit" class="btn btn-dark">Submit</button><br>
+                <a href="/">Back to top</a>
+              </div>
+        </form>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- about section --}}
+
+
+    <section class="about_section py-5" id="about_section">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>About Us</h3>
+            <p>Best software training institute | Extra Addon- Aptitude, softskills, and mock interviews. Learn Software Testing, Full stack/ Back end developer, python development and more. Courses: Complete Software Testing, Automation, Manual, & API, Testing/Postman & Agile. Best software training institute | Extra Addon- Aptitude, softskills, and mock interviews. Learn Software Testing, Full stack/ Back end developer, python development and more. Courses: Complete Software Testing, Automation, Manual, & API, Testing/Postman & Agile.</p>
+            <button class="btn btn-success btn-lg">
+              Contact Us
+            </button><br>
+            <a href="/">Back to top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer background1 text-center py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              @ 2023 Copyright:<span>  Sakshi Kharade</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
